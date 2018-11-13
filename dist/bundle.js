@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/main.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/client/index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -218,27 +218,27 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 
 /***/ }),
 
-/***/ "./src/component/HelloWorld.jsx":
-/*!**************************************!*\
-  !*** ./src/component/HelloWorld.jsx ***!
-  \**************************************/
+/***/ "./src/client/component/HelloWorld.jsx":
+/*!*********************************************!*\
+  !*** ./src/client/component/HelloWorld.jsx ***!
+  \*********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/*\r\n * @Author: 伟龙-Willon qq:1061258787 \r\n * @Date: 2018-11-12 12:21:45 \r\n * @Last Modified by: 伟龙-Willon\r\n * @Last Modified time: 2018-11-12 12:25:00\r\n */\n\n\nvar HelloWorld = function HelloWorld() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"h1\", null, \"Hello SSR\");\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (HelloWorld);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvY29tcG9uZW50L0hlbGxvV29ybGQuanN4LmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vLy4vc3JjL2NvbXBvbmVudC9IZWxsb1dvcmxkLmpzeD81MzI0Il0sInNvdXJjZXNDb250ZW50IjpbIi8qXHJcbiAqIEBBdXRob3I6IOS8n+m+mS1XaWxsb24gcXE6MTA2MTI1ODc4NyBcclxuICogQERhdGU6IDIwMTgtMTEtMTIgMTI6MjE6NDUgXHJcbiAqIEBMYXN0IE1vZGlmaWVkIGJ5OiDkvJ/pvpktV2lsbG9uXHJcbiAqIEBMYXN0IE1vZGlmaWVkIHRpbWU6IDIwMTgtMTEtMTIgMTI6MjU6MDBcclxuICovXHJcbmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcclxuY29uc3QgSGVsbG9Xb3JsZCA9ICgpID0+IHtcclxuICAgIHJldHVybiAoXHJcbiAgICAgICAgPGgxPkhlbGxvIFNTUjwvaDE+XHJcbiAgICApXHJcbn1cclxuZXhwb3J0IGRlZmF1bHQgSGVsbG9Xb3JsZCJdLCJtYXBwaW5ncyI6IkFBQUE7QUFBQTtBQUFBO0FBQUE7Ozs7OztBQU1BO0FBQ0E7QUFBQTtBQUNBO0FBR0E7QUFDQTtBQUFBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/component/HelloWorld.jsx\n");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/*\r\n * @Author: 伟龙-Willon qq:1061258787 \r\n * @Date: 2018-11-12 12:21:45 \r\n * @Last Modified by: 伟龙-Willon\r\n * @Last Modified time: 2018-11-12 12:25:00\r\n */\n\n\nvar HelloWorld = function HelloWorld() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"h1\", null, \"Hello SSR\");\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (HelloWorld);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvY2xpZW50L2NvbXBvbmVudC9IZWxsb1dvcmxkLmpzeC5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3NyYy9jbGllbnQvY29tcG9uZW50L0hlbGxvV29ybGQuanN4PzVmZjYiXSwic291cmNlc0NvbnRlbnQiOlsiLypcclxuICogQEF1dGhvcjog5Lyf6b6ZLVdpbGxvbiBxcToxMDYxMjU4Nzg3IFxyXG4gKiBARGF0ZTogMjAxOC0xMS0xMiAxMjoyMTo0NSBcclxuICogQExhc3QgTW9kaWZpZWQgYnk6IOS8n+m+mS1XaWxsb25cclxuICogQExhc3QgTW9kaWZpZWQgdGltZTogMjAxOC0xMS0xMiAxMjoyNTowMFxyXG4gKi9cclxuaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0J1xyXG5jb25zdCBIZWxsb1dvcmxkID0gKCkgPT4ge1xyXG4gICAgcmV0dXJuIChcclxuICAgICAgICA8aDE+SGVsbG8gU1NSPC9oMT5cclxuICAgIClcclxufVxyXG5leHBvcnQgZGVmYXVsdCBIZWxsb1dvcmxkIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUFBO0FBQUE7QUFBQTs7Ozs7O0FBTUE7QUFDQTtBQUFBO0FBQ0E7QUFHQTtBQUNBO0FBQUEiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./src/client/component/HelloWorld.jsx\n");
 
 /***/ }),
 
-/***/ "./src/main.js":
-/*!*********************!*\
-  !*** ./src/main.js ***!
-  \*********************/
+/***/ "./src/client/index.js":
+/*!*****************************!*\
+  !*** ./src/client/index.js ***!
+  \*****************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _component_HelloWorld__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./component/HelloWorld */ \"./src/component/HelloWorld.jsx\");\n/*\r\n * @Author: 伟龙-Willon qq:1061258787 \r\n * @Date: 2018-11-12 12:25:24 \r\n * @Last Modified by: 伟龙-Willon\r\n * @Last Modified time: 2018-11-12 14:04:36\r\n */\n\n\n\nreact_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_component_HelloWorld__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null), document.getElementById('app'));//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvbWFpbi5qcy5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3NyYy9tYWluLmpzPzU2ZDciXSwic291cmNlc0NvbnRlbnQiOlsiLypcclxuICogQEF1dGhvcjog5Lyf6b6ZLVdpbGxvbiBxcToxMDYxMjU4Nzg3IFxyXG4gKiBARGF0ZTogMjAxOC0xMS0xMiAxMjoyNToyNCBcclxuICogQExhc3QgTW9kaWZpZWQgYnk6IOS8n+m+mS1XaWxsb25cclxuICogQExhc3QgTW9kaWZpZWQgdGltZTogMjAxOC0xMS0xMiAxNDowNDozNlxyXG4gKi9cclxuaW1wb3J0IFJlYWN0IGZyb20gXCJyZWFjdFwiXHJcbmltcG9ydCBSZWFjdERPTSBmcm9tIFwicmVhY3QtZG9tXCI7XHJcbmltcG9ydCBIZWxsb1dvcmxkIGZyb20gJy4vY29tcG9uZW50L0hlbGxvV29ybGQnXHJcblxyXG5SZWFjdERPTS5yZW5kZXIoPEhlbGxvV29ybGQvPixkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnYXBwJykpXHJcbiJdLCJtYXBwaW5ncyI6IkFBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7Ozs7OztBQU1BO0FBQ0E7QUFDQTtBQUVBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/main.js\n");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _component_HelloWorld__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./component/HelloWorld */ \"./src/client/component/HelloWorld.jsx\");\n/*\r\n * @Author: 伟龙-Willon qq:1061258787 \r\n * @Date: 2018-11-12 12:25:24 \r\n * @Last Modified by: 伟龙-Willon\r\n * @Last Modified time: 2018-11-12 23:18:42\r\n */\n\n\n\nreact_dom__WEBPACK_IMPORTED_MODULE_1___default.a.hydrate(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_component_HelloWorld__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null), document.getElementById('app')); //hydrate 这个函数将会接受服务端渲染的react代码并挂载事件处理函数。//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvY2xpZW50L2luZGV4LmpzLmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vLy4vc3JjL2NsaWVudC9pbmRleC5qcz8zYjVlIl0sInNvdXJjZXNDb250ZW50IjpbIi8qXHJcbiAqIEBBdXRob3I6IOS8n+m+mS1XaWxsb24gcXE6MTA2MTI1ODc4NyBcclxuICogQERhdGU6IDIwMTgtMTEtMTIgMTI6MjU6MjQgXHJcbiAqIEBMYXN0IE1vZGlmaWVkIGJ5OiDkvJ/pvpktV2lsbG9uXHJcbiAqIEBMYXN0IE1vZGlmaWVkIHRpbWU6IDIwMTgtMTEtMTIgMjM6MTg6NDJcclxuICovXHJcbmltcG9ydCBSZWFjdCBmcm9tIFwicmVhY3RcIlxyXG5pbXBvcnQgUmVhY3RET00gZnJvbSBcInJlYWN0LWRvbVwiO1xyXG5pbXBvcnQgSGVsbG9Xb3JsZCBmcm9tICcuL2NvbXBvbmVudC9IZWxsb1dvcmxkJ1xyXG5cclxuUmVhY3RET00uaHlkcmF0ZSg8SGVsbG9Xb3JsZC8+LGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdhcHAnKSkgLy9oeWRyYXRlIOi/meS4quWHveaVsOWwhuS8muaOpeWPl+acjeWKoeerr+a4suafk+eahHJlYWN05Luj56CB5bm25oyC6L295LqL5Lu25aSE55CG5Ye95pWw44CCXHJcbiJdLCJtYXBwaW5ncyI6IkFBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7Ozs7OztBQU1BO0FBQ0E7QUFDQTtBQUVBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/client/index.js\n");
 
 /***/ })
 
