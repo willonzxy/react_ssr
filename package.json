@@ -32,6 +32,7 @@
     "koa-route": "^3.2.0",
     "koa-static": "^5.0.0",
     "react": "^16.6.1",
-    "react-dom": "^16.6.1"
+    "react-dom": "^16.6.1",
+    "react-router-dom": "^4.3.1"
   }
 }

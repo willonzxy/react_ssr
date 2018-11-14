@@ -2,7 +2,7 @@
  * @Author: 伟龙-Willon qq:1061258787 
  * @Date: 2018-11-12 19:09:47 
  * @Last Modified by: 伟龙-Willon
- * @Last Modified time: 2018-11-13 22:27:29
+ * @Last Modified time: 2018-11-14 13:40:58
  */
 /* const Koa = require('koa')
 const route = require('koa-route')
@@ -15,14 +15,23 @@ import path from 'path'
 
 import React from 'react'
 import { renderToString } from 'react-dom/server'
-import HelloWorld from '../client/component/HelloWorld'
+/* import HelloWorld from '../client/component/HelloWorld' */
+import { StaticRouter } from "react-router-dom"
+import Layout from '../client/component/Layout';
 
 const app = new Koa()
-/* app.use(static_server(path.resolve(__dirname,'../../dist'))) */
+app.use(static_server(path.resolve(__dirname,'../../dist')))
 
 app.use(route.get('/',async ctx => {
     /* ctx.type = 'text/html' */
-    const reactDom = renderToString( <HelloWorld /> )
+    console.log(ctx.request.url)
+    const context = {};
+    const jsx = (
+        <StaticRouter context={ context } location={ ctx.request.url }>
+            <Layout />
+        </StaticRouter>
+    )
+    const reactDom = renderToString(jsx)
     ctx.type = 'text/html'
     ctx.body = htmlTemplate(reactDom)
 }))
@@ -38,6 +47,7 @@ function htmlTemplate(reactDom){
             </head>
             <body>
                 <div id="app">${reactDom}</div>
+                <script src="/bundle.js"></script>
             </body>
             </html>`
 } 
