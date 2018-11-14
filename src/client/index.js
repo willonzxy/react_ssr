@@ -2,18 +2,23 @@
  * @Author: 伟龙-Willon qq:1061258787 
  * @Date: 2018-11-12 12:25:24 
  * @Last Modified by: 伟龙-Willon
- * @Last Modified time: 2018-11-14 13:27:56
+ * @Last Modified time: 2018-11-14 20:03:46
  */
 import React from "react"
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom"
+import { Provider as ReduxProvider } from "react-redux";
 import Layout from './component/Layout'
+import createStore from "../server/store"
 
+const store = createStore(window.REDUX_DATA)
 const App = ()=>{
     return (
-        <BrowserRouter>
-            <Layout/>
-        </BrowserRouter>
+        <ReduxProvider store={store}>
+            <BrowserRouter>
+                <Layout/>
+            </BrowserRouter>
+        </ReduxProvider>
     )
 }
 

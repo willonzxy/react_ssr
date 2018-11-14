@@ -2,7 +2,7 @@
  * @Author: 伟龙-Willon qq:1061258787 
  * @Date: 2018-11-12 12:10:18 
  * @Last Modified by: 伟龙-Willon
- * @Last Modified time: 2018-11-14 13:30:50
+ * @Last Modified time: 2018-11-14 20:12:06
  */
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const {WebPlugin} = require('web-webpack-plugin')
