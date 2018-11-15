@@ -2,7 +2,7 @@
  * @Author: 伟龙-Willon qq:1061258787 
  * @Date: 2018-11-12 19:09:47 
  * @Last Modified by: 伟龙-Willon
- * @Last Modified time: 2018-11-15 15:50:13
+ * @Last Modified time: 2018-11-15 16:21:28
  */
 /* const Koa = require('koa')
 const route = require('koa-route')
@@ -22,6 +22,7 @@ import { renderToString } from 'react-dom/server'
 import { StaticRouter,matchPath} from "react-router-dom"
 import routes from "../client/route"
 import Layout from '../client/component/Layout';
+import Helmet from "react-helmet"
 
 const app = new Koa()
 let m = 0
@@ -53,20 +54,23 @@ app.use(router.get('/*',async ctx => { // 这个/*这个星号很重要哈，让
         const reactDom = renderToString(jsx)
         const reduxState = store.getState()
         ctx.type = 'text/html'
-        const tpl = htmlTemplate(reactDom,reduxState)
+        const helmetData = Helmet.renderStatic()
+        const tpl = htmlTemplate(reactDom,reduxState,helmetData)
         ctx.body = tpl
     }).catch(err =>
         ctx.body = htmlTemplate(`<b>error:${err}</b>`)
     )
 }))
 
-function htmlTemplate(reactDom,reduxState){
+function htmlTemplate(reactDom,reduxState,helmetData){
     return `<!DOCTYPE html>
             <html>
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                ${ helmetData.title.toString( ) }
+                ${ helmetData.meta.toString( ) }
                 <title>Document</title>
             </head>
             <body>

@@ -20,3 +20,5 @@ React_SSR版本控制
                 .map( route => route.component ) // map to components
                 .filter( comp => comp.serverFetch ) // check if components have data requirement
                 .map( comp => store.dispatch( comp.serverFetch( ) ) ); // dispatch data requirement -->
+
+6、react-helmet 为每个单页面接入专属的meta头部信息
