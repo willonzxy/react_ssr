@@ -2,14 +2,14 @@
  * @Author: 伟龙-Willon qq:1061258787 
  * @Date: 2018-11-12 19:09:47 
  * @Last Modified by: 伟龙-Willon
- * @Last Modified time: 2018-11-14 20:12:53
+ * @Last Modified time: 2018-11-15 15:50:13
  */
 /* const Koa = require('koa')
 const route = require('koa-route')
 const static_server = require('koa-static')
 const path = require('path') */
 import Koa from 'koa'
-import route from 'koa-route'
+import router from 'koa-route'
 import static_server from 'koa-static'
 import path from 'path'
 
@@ -19,29 +19,45 @@ import createStore from "./store"
 import { add } from "./action"
 import { renderToString } from 'react-dom/server'
 /* import HelloWorld from '../client/component/HelloWorld' */
-import { StaticRouter } from "react-router-dom"
+import { StaticRouter,matchPath} from "react-router-dom"
+import routes from "../client/route"
 import Layout from '../client/component/Layout';
 
 const app = new Koa()
+let m = 0
 app.use(static_server(path.resolve(__dirname,'../../dist')))
 
-app.use(route.get('/*',async ctx => { // 这个/*这个星号很重要哈
+app.use(router.get('/favicon.ico',async ctx=>{
+    return
+}))
+
+app.use(router.get('/*',async ctx => { // 这个/*这个星号很重要哈，让每个路由都经过这里
     /* ctx.type = 'text/html' */
-    console.log(ctx.request.url)
     const context = {};
-    const store = createStore({count:{num:0}}) // 初始化一个store
-    store.dispatch(add())
-    const jsx = (
-        <ReduxProvider store = {store}>
-            <StaticRouter context={ context } location={ ctx.request.url }>
-                <Layout />
-            </StaticRouter>
-        </ReduxProvider>
+    const store = createStore() // 初始化一个store
+    store.dispatch(add()) // 先自增1先
+    const dataRequirements =                           // 这里是十分关键的，让本次需要渲染的所有组件都带上一个serverFetch函数然后全部请求完成之后，放进Redux，然后在吐出，妙哉，妙哉
+            routes
+                .filter( route => matchPath( ctx.req.url, route ) ) // 改写route配置文件就是为了这一步 filter matching paths
+                .map( route => route.component ) // map to components
+                .filter( comp => comp.serverFetch ) // check if components have data requirement
+                .map( comp => store.dispatch( comp.serverFetch() ) ); // dispatch data requirement
+    await Promise.all(dataRequirements).then(()=>{
+        const jsx = (
+            <ReduxProvider store = {store}>
+                <StaticRouter context={ context } location={ ctx.req.url }>
+                    <Layout />
+                </StaticRouter>
+            </ReduxProvider>
+        )
+        const reactDom = renderToString(jsx)
+        const reduxState = store.getState()
+        ctx.type = 'text/html'
+        const tpl = htmlTemplate(reactDom,reduxState)
+        ctx.body = tpl
+    }).catch(err =>
+        ctx.body = htmlTemplate(`<b>error:${err}</b>`)
     )
-    const reactDom = renderToString(jsx)
-    const reduxState = store.getState()
-    ctx.type = 'text/html'
-    ctx.body = htmlTemplate(reactDom,reduxState)
 }))
 
 function htmlTemplate(reactDom,reduxState){

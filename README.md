@@ -12,3 +12,11 @@ React_SSR版本控制
 3、接入React Router // 这里需要client脚本配合了
 
 4、接入React Redux // server提供一部分的state, 放进window.REDUX_DATA里client根据就这么一点点的state（状态）就可以渲染了
+
+5、fetch data 加载数据 
+<!--     const dataRequirements = // 这里是十分关键的，让本次需要渲染的所有组件都带上一个serverFetch函数然后全部请求完成之后，放进Redux里然后在吐出，妙哉，妙哉
+            routes
+                .filter( route => matchPath( req.url, route ) ) // filter matching paths
+                .map( route => route.component ) // map to components
+                .filter( comp => comp.serverFetch ) // check if components have data requirement
+                .map( comp => store.dispatch( comp.serverFetch( ) ) ); // dispatch data requirement -->
